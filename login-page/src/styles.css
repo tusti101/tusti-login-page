@@ -1,6 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* ---------------- Global Reset ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* ---------------- Background Animation ---------------- */
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  body {
+    background: linear-gradient(-45deg, #141e30, #243b55, #1c1c1c, #3a3d40);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,47 +24,117 @@ body {
     margin: 0;
   }
   
+  /* ---------------- Glassmorphism Card ---------------- */
   .container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 320px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    width: 400px;
     text-align: center;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
   }
   
+  /* ---------------- Floating Effect ---------------- */
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .container {
+    animation: floating 5s infinite ease-in-out;
+  }
+  
+  /* ---------------- Header Text ---------------- */
   h2 {
+    color: #ffffff;
+    font-size: 28px;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    text-align: left;
-    margin-top: 10px;
-  }
-  
+  /* ---------------- Input Fields ---------------- */
   input {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.2), inset -3px -3px 10px rgba(255, 255, 255, 0.1);
   }
   
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  input:focus {
+    border: 1px solid #74ebd5;
+    outline: none;
+    box-shadow: 0px 0px 12px rgba(116, 235, 213, 0.5);
+  }
+  
+  /* ---------------- Button Styles ---------------- */
   button {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    margin-top: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
   }
   
   button:hover {
-    background-color: #0056b3;
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #56c8a3, #91a7e5);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* ---------------- Links ---------------- */
+  p {
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+  }
+  
+  a {
+    color: #74ebd5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+  }
+  
+  /* ---------------- Responsive Design ---------------- */
+  @media (max-width: 450px) {
+    .container {
+      width: 90%;
+      padding: 30px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    button {
+      font-size: 16px;
+    }
   }
   
