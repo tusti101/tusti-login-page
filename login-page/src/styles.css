@@ -52,16 +52,3 @@ body {
     background-color: #0056b3;
   }
   
-  p {
-    margin-top: 10px;
-  }
-  
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
